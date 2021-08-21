@@ -1,14 +1,14 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'benjerry-app',
+    title: 'Welcome to the Dairy Shop',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'a display using Vue.js to hit our API and display the data' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -42,9 +42,35 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://trayvonnorthern.com/Edgewood-API/public/api/products',
+    browserBaseURL: 'https://trayvonnorthern.com/Edgewood-API/public/api/products'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCss: true,
+    loaders: {
+      cssModules: {
+        localIdentName: '[local]_[hash:base64:5]'
+      }
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|scss|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    },
+    hotMiddleware: {
+      client: {
+        overlay: false
+      }
+    }
   }
 }
