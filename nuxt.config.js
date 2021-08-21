@@ -43,8 +43,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://trayvonnorthern.com/Edgewood-API/public/api/products',
-    browserBaseURL: 'https://trayvonnorthern.com/Edgewood-API/public/api/products'
+    baseURL: 'https://trayvonnorthern.com/Edgewood-API/public/api',
+    browserBaseURL: 'https://trayvonnorthern.com/Edgewood-API/public/api'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
