@@ -42,7 +42,7 @@ export const mutations = {
     state.products = []
     state.products = products
   },
-  setCatgories (state, products) {
+  setCategories (state, products) {
     state.categories = []
     products.map((product) => {
       return state.categories.push({
@@ -52,6 +52,9 @@ export const mutations = {
         image: product.catimage
       })
     })
+  },
+  setPages (state, products) {
+    return { ...state.pages, ...products }
   },
   resetStateData (state) {
     const newState = initialState()

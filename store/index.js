@@ -1,7 +1,11 @@
 export const state = () => ({})
 export const actions = {
-  async nuxtServerInit (context, { __ }) {
-    await context.dispatch('products/fetchProducts', {})
+  async nuxtServerInit ({ dispatch }, { req }) {
+    try {
+      await dispatch('products/fetchProducts', { page: req.page }, { root: true })
+    } catch (e) {
+      console.log(e.message)
+    }
   }
 }
 export const mutations = {}
