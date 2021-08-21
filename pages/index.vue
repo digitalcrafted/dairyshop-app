@@ -1,6 +1,6 @@
 <template>
   <div>
-    Hello
+    {{ categories }}
   </div>
 </template>
 

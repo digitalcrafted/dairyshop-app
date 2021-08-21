@@ -45,12 +45,16 @@ export const mutations = {
   setCategories (state, products) {
     state.categories = []
     products.map((product) => {
-      return state.categories.push({
-        text: product.catname,
-        value: product.catname,
-        description: product.catdescription,
-        image: product.catimage
-      })
+      const unique = state.categories.find((item) => { return product.catname === item.value })
+      if (!unique) {
+        state.categories.push({
+          text: product.catname,
+          value: product.catname,
+          description: product.catdescription,
+          image: product.catimage
+        })
+      }
+      return state.categories
     })
   },
   setPages (state, products) {
