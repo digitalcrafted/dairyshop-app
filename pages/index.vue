@@ -3,12 +3,12 @@
     <div class="relative">
       <div>
         <h1 class="text-3xl text-centre">
-          Products
+          {{ selectedCategory }}
         </h1>
       </div>
       <div>
         <div class="shadow flex mt-5">
-          <input class="w-full rounded p-4" type="text" placeholder="Search Products">
+          <input v-model="search" class="w-full rounded p-4" type="text" placeholder="Search Products">
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
           </svg>
         </div>
         <div class="absolute z-10 flex-col items-start hidden w-full pb-1 bg-white shadow-lg rounded group-focus:flex">
-          <a class="w-full px-4 py-2 text-left hover:bg-gray-200" @click.prevent="switchCategory('All Categories')">All Categories</a>
+          <a class="w-full px-4 py-2 text-left hover:bg-gray-200" @click.prevent="switchCategory('All Products')">All Products</a>
           <a
             v-for="(cat, index) in categories"
             :key="index"
@@ -64,28 +64,52 @@ export default {
   name: 'DairyShopHome',
   data () {
     return {
-      selectedCategory: 'All Categories',
-      productsList: []
+      selectedCategory: 'All Products',
+      productsList: [],
+      search: null
     }
   },
   computed: {
     ...mapState('products', ['products', 'categories', 'pages'])
+  },
+  watch: {
+    search (val) {
+      setTimeout(() => {
+        this.filterProducts(val)
+      }, 2000)
+    }
   },
   mounted () {
     this.getProductsList()
   },
   methods: {
     getProductsList () {
-      this.selectedCategory === 'All Categories'
+      this.selectedCategory === 'All Products'
         ? this.productsList = this.products
         : this.productsList = this.products.filter((product) => {
           return product.catname === this.selectedCategory
         })
     },
     switchCategory (cat) {
-      console.log(cat)
       this.selectedCategory = cat
       this.getProductsList()
+    },
+    filterProducts (arg) {
+      if (arg.length > 3) {
+        this.switchCategory('All Products')
+        this.productsList = this.products.reduce(
+          function (list, item) {
+            if (item.name.includes(arg)) {
+              list.push(item)
+            }
+            return list
+          },
+          []
+        )
+        return this.productsList
+      } else {
+        this.getProductsList()
+      }
     }
   }
 
