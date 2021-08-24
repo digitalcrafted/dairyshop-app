@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <CategoryList
+    <CategorySelectionAndPagination
       :categories="categories"
       :selected-category="selectedCategory"
       :switch-category="switchCategory"

@@ -27,7 +27,6 @@ export const actions = {
     try {
       const page = options.page ? '?page=' + options.page : ''
       await this.$axios.$get('/products' + page).then((response) => {
-        console.log(response)
         commit('setProducts', response.data)
         commit('setCategories', response.data)
         commit('setPages', response)
