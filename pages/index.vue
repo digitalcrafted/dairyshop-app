@@ -12,7 +12,13 @@
         </div>
       </div>
     </div>
-    <CategoryList :categories="categories" :selected-category="selectedCategory" :switch-category="switchCategory" />
+    <CategoryList
+      :categories="categories"
+      :selected-category="selectedCategory"
+      :switch-category="switchCategory"
+      :pages="pages"
+      :switch-page="switchPage"
+    />
     <ProductsList :products-list="productsList" />
   </div>
 </template>
@@ -53,6 +59,11 @@ export default {
     switchCategory (cat) {
       this.selectedCategory = cat
       this.getProductsList()
+    },
+    switchPage (cat) {
+      this.$nuxt.$store.dispatch('products/fetchProducts', { page: cat }).then(() => {
+        this.getProductsList()
+      })
     },
     filterProducts (arg) {
       if (arg.length > 3) {
