@@ -52,7 +52,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extractCss: true,
+    /*    extractCss: true,
     loaders: {
       cssModules: {
         localIdentName: '[local]_[hash:base64:5]'
@@ -69,7 +69,7 @@ export default {
           }
         }
       }
-    },
+    }, */
     hotMiddleware: {
       client: {
         overlay: false
