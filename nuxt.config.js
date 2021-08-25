@@ -23,8 +23,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~plugins/pagination.js', mode: 'client' },
-    { src: '~plugins/vue2-filters.js', mode: 'client' },
-    { src: '~/plugins/amplify.js', mode: 'client' }
+    { src: '~plugins/vue2-filters.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
