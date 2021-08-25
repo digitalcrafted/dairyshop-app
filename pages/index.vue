@@ -46,6 +46,11 @@ export default {
     }
   },
   mounted () {
+    if (!this.products.length) {
+      this.$nuxt.$store.dispatch('products/fetchProducts').then(() => {
+        this.getProductsList()
+      })
+    }
     this.getProductsList()
   },
   methods: {

@@ -51,6 +51,6 @@ The grid must also have a filter menu to filter results by either category or ca
 ### `Extra Bonus`
 - I completed the requirements listed and went the extra mile:
 - I added `Search` functionality
-- I ensured that the `Search` was performant by implement a character limit and a debounce functionality
+- I ensured that the `Search` was performant by implemented a character limit and a debounce functionality
 
 
