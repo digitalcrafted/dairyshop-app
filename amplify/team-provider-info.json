@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dairyshopapp-dev-05646-authRole",
+      "UnauthRoleArn": "arn:aws:iam::212188952493:role/amplify-dairyshopapp-dev-05646-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::212188952493:role/amplify-dairyshopapp-dev-05646-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dairyshopapp-dev-05646-deployment",
+      "UnauthRoleName": "amplify-dairyshopapp-dev-05646-unauthRole",
+      "StackName": "amplify-dairyshopapp-dev-05646",
+      "StackId": "arn:aws:cloudformation:us-east-1:212188952493:stack/amplify-dairyshopapp-dev-05646/f50437f0-0536-11ec-9a71-0e508885cec5",
+      "AmplifyAppId": "d3v8c440cs302w"
+    }
+  }
+}
