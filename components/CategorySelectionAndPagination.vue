@@ -9,6 +9,7 @@
       :prev-text="'Prev'"
       :next-text="'Next'"
       :container-class="'flex justify-center mt-10 space-x-1'"
+      :class="'flex justify-center mt-10 space-x-1'"
       :page-class="'flex items-center justify-center h-8 w-8 rounded hover:bg-indigo-200 text-sm font-medium text-gray-600 hover:text-indigo-600'"
       :page-link-class="'flex items-center justify-center h-8 w-8 rounded hover:bg-indigo-200 text-sm font-medium text-gray-600 hover:text-indigo-600'"
       :prev-class="'flex items-center justify-center h-8 w-8 rounded text-gray-400'"
